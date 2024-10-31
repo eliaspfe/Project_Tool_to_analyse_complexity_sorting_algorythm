@@ -1,7 +1,7 @@
 import tkinter as tk
 from tkinter import ttk
 from langchain_openai import ChatOpenAI
-from ButtonFunctions import calculate_complexity
+from functions import calculate_complexity
 
 
 # Create the main application window
