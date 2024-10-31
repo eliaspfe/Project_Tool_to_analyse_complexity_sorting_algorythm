@@ -1,14 +1,8 @@
 import tkinter as tk
 from tkinter import ttk
 from langchain_openai import ChatOpenAI
+from ButtonFunctions import calculate_complexity
 
-model = ChatOpenAI(model="gpt-3.5-turbo")
-
-def calculate_button():
-    code_text = code_input.get("1.0", "end-1c")
-    response = model.invoke(code_text)
-    print(response.content)
-    output_label['text'] = response.content
 
 # Create the main application window
 gui = tk.Tk()
@@ -64,7 +58,7 @@ calculate_button = tk.Button(
     activebackground="green",
     activeforeground="#1e1f23",
     relief="flat",
-    command=calculate_button
+    command=lambda: calculate_complexity(code_input.get("1.0", "end-1c"), output_label)  # Call the function
 )
 
 calculate_button.pack(fill="both", expand=True, padx=80, pady=(0, 20))  # Padding below the button
@@ -77,7 +71,7 @@ output_label = tk.Label(
     fg="lightgrey",
     bg="#2b2d33"
 )
-output_label.pack(pady=(0, 10))  # Padding below the subtitle
+output_label.pack(padx= 80, pady=(0, 10))  # Padding below the subtitle
 
 # Run the main event loop
 gui.mainloop()
