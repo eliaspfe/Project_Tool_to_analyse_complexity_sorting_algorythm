@@ -8,6 +8,7 @@ from langchain_core.chat_history import (
 )
 from langchain_core.prompts import ChatPromptTemplate, MessagesPlaceholder
 from langchain_core.runnables.history import RunnableWithMessageHistory
+import tkinter as tk
 
 # Path to the system prompt file
 SYS_PROMPT_PATH = "sys_prompts/system_prompt1.txt"
@@ -15,6 +16,20 @@ session = {"configurable": {"session_id": "1"}}
 
 # Load the environment variables
 load_dotenv(override=True)
+
+
+def read_file(file_path):
+    """
+    Function to read the content of a file.
+
+    Args:
+        file_path (str): The path to the file.
+
+    Returns:
+        str: The content of the file.
+    """
+    with open(file_path, "r", encoding="utf-8") as file:
+        return file.read()
 
 # Initialize the chat History
 store = {}
@@ -37,9 +52,7 @@ def get_session_history(session_id: str) -> BaseChatMessageHistory:
 model = ChatOpenAI(model="gpt-3.5-turbo")
 
 # Read System Prompt from File and remove special characters
-with open(SYS_PROMPT_PATH, "r", encoding="utf-8") as file_systeminput:
-    system_prompt = file_systeminput.read()
-    #system_prompt = remove_special_characters(system_prompt)
+system_prompt = read_file(SYS_PROMPT_PATH)
 
 # Prompt Template
 prompt = ChatPromptTemplate.from_messages(
@@ -66,4 +79,21 @@ def calculate_complexity(code_text, output_label):
                 config=session,
             )
     #print(response.content)  # Print the response to the console
-    output_label['text'] = response.content  # Update the label in the GUI
+    #output_label['text'] = response.content  # Update the label in the GUI, Just for tkLabel
+    update_text(output_label, response.content)  # Update the label in the GUI, for tkText
+
+
+def update_text(text_widget, new_text):
+    # Clear any existing content in the Text widget
+    text_widget.config(state="normal")
+    text_widget.delete("1.0", tk.END)
+    # Insert new content
+    text_widget.insert(tk.END, new_text)
+    text_widget.config(state="disabled")
+
+
+def paste_example(text_widget, path: str):
+    example_code = read_file(path)
+    text_widget.delete("1.0", tk.END)
+    text_widget.insert(tk.END, example_code)
+    
