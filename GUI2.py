@@ -125,7 +125,8 @@ code_input = tk.Text(
     fg="white",
     insertbackground="white",  # Cursor color
     borderwidth=0,
-    relief="flat"
+    relief="flat",
+    height=15
 )
 code_input.pack(fill="both", expand=True, padx=10, pady=10)
 
@@ -156,7 +157,7 @@ output_label = tk.Text(
     insertbackground="#2b2d33",
     highlightthickness=0
 )
-output_label.insert(tk.END, "Enter your code here...")
+output_label.insert(tk.END, "Enter your code in the field above...")
 output_label.config(state="disabled")
 output_label.pack(fill="both", expand=True, padx=10, pady=10)  # Padding below the subtitle
 
