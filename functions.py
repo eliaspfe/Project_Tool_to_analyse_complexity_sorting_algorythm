@@ -49,7 +49,7 @@ def get_session_history(session_id: str) -> BaseChatMessageHistory:
     return store[session_id]
 
 
-model = ChatOpenAI(model="gpt-3.5-turbo")
+model = ChatOpenAI(model="gpt-4o")
 
 # Read System Prompt from File and remove special characters
 system_prompt = read_file(SYS_PROMPT_PATH)

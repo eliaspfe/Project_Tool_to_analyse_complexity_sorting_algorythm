@@ -2,6 +2,7 @@
 ## Description
 The tool 
 ## Getting Started
+- python version: 3.12.2
 ### 1. Create virtual Environement
 - Unix/MacOS `python3 -m venv .venv`
 - Windows `py -m venv .venv`
@@ -11,7 +12,7 @@ The tool
 ### 3. Install required Packages
 - `pip install -r requirements.txt`
 ### 4. Create .env file from template
-Create a .env file and paste the API key into the created file
+Create a file named '.env' and paste the API key into the created file
 ### 5. Run the GUI
 To run the Tool run the `GUI.py` file.
 
