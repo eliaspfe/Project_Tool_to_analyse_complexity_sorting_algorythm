@@ -8,6 +8,7 @@ from langchain_core.chat_history import (
 )
 from langchain_core.prompts import ChatPromptTemplate, MessagesPlaceholder
 from langchain_core.runnables.history import RunnableWithMessageHistory
+from langchain_community.callbacks import get_openai_callback
 import tkinter as tk
 
 # Path to the system prompt file
@@ -74,12 +75,13 @@ def calculate_complexity(code_text, output_label):
     Function to calculate the complexity of the given code text
     and update the output label with the response.
     """
-    response = llm_with_history.invoke(
-                code_text,
-                config=session,
-            )
-    #print(response.content)  # Print the response to the console
-    #output_label['text'] = response.content  # Update the label in the GUI, Just for tkLabel
+    with get_openai_callback() as cb:
+        response = llm_with_history.invoke(
+                    code_text,
+                    config=session,
+                )
+        print(cb)
+
     update_text(output_label, response.content)  # Update the label in the GUI, for tkText
 
 
@@ -96,4 +98,7 @@ def paste_example(text_widget, path: str):
     example_code = read_file(path)
     text_widget.delete("1.0", tk.END)
     text_widget.insert(tk.END, example_code)
+
+def delete_code(text_widget):
+    text_widget.delete("1.0", tk.END)
     

@@ -1,7 +1,7 @@
 import tkinter as tk
 from tkinter import ttk
 from langchain_openai import ChatOpenAI
-from functions import calculate_complexity, paste_example
+from functions import calculate_complexity, paste_example, delete_code
 
 SYSTEM_PROMPT_PATH = "sys_prompts/system_prompt1.txt"
 BUBBLE_SORT_PATH = "example_algorithms/bubble_sort.txt"
@@ -130,19 +130,38 @@ code_input = tk.Text(
 )
 code_input.pack(fill="both", expand=True, padx=10, pady=10)
 
-# Create the Calculate button
+#Create a frame for the lower buttons
+button_frame_lower = tk.Frame(master=gui, bg="#2b2d33")
+button_frame_lower.pack(fill="x", expand=True, padx=25, pady=(0, 10))
+
+#Create the Calculate button
 calculate_button = tk.Button(
-    gui,
+    master=button_frame_lower,
     text="Calculate",
     font=("Arial", 16, "bold"),
     fg="#1e1f23",
     bg="#3a3d46",
     relief="flat",
     height=2,
+    width=50,
     command=lambda: calculate_complexity(code_input.get("1.0", "end-1c"), output_label)  # Call the function
 )
+calculate_button.pack(side="left", padx=5, expand=True)
 
-calculate_button.pack(fill="both", padx=80, pady=(0, 20))  # Padding below the button
+
+# Create the Clear button
+clear_button = tk.Button(
+    master=button_frame_lower,
+    text="Clear Code",
+    font=("Arial", 16, "bold"),
+    fg="#1e1f23",
+    bg="#3a3d46",
+    relief="flat",
+    height=2,
+    width=50,
+    command=lambda: delete_code(code_input)
+)
+clear_button.pack(side="left", padx=5, expand=True)
 
 output_frame = tk.Frame(master=gui, bg="#2b2d33")
 output_frame.pack(fill="both", expand=True, padx=20, pady=(0, 10))
