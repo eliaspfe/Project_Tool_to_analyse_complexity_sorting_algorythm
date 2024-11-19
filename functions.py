@@ -1,4 +1,4 @@
-
+# docstrings are generated using github copilot
 import os
 from dotenv import load_dotenv
 from langchain_openai import ChatOpenAI
@@ -95,10 +95,26 @@ def update_text(text_widget, new_text):
 
 
 def paste_example(text_widget, path: str):
+    """
+    Reads the content of a file and inserts it into a text widget.
+
+    Args:
+        text_widget (tk.Text): The text widget where the file content will be inserted.
+        path (str): The path to the file to be read.
+
+    Returns:
+        None
+    """
     example_code = read_file(path)
     text_widget.delete("1.0", tk.END)
     text_widget.insert(tk.END, example_code)
 
 def delete_code(text_widget):
+    """
+    Deletes all content from the given text widget.
+
+    Args:
+        text_widget (tk.Text): The text widget from which to delete all content.
+    """
     text_widget.delete("1.0", tk.END)
     
