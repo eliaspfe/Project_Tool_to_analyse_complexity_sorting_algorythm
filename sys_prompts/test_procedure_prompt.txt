@@ -1,0 +1,17 @@
+Based on your Last Outputs, summarize the complexity of the analyzed algorithms in the following scheme:
+
+
+Name of Algorithm:
+Time complexities: [Time complexities for worst-, best-, average-case]
+Space complexities: [Time complexities for worst-, best-, average-case]
++++
+
+
+Use the following sequence:
+- insertion Sort
+- Merge Sort
+- Bubble Sort
+- Quick Sort
+- Selection Sort
+
+Ignore the implemented algorithms from the system prompt.

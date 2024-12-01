@@ -7,6 +7,7 @@ The implemented tool helps to analyze and determine the Big O notation (time and
 2. Getting Started
 3. Usage of the Tool
 4. Troubleshooting
+5. Testing
 
 ## Features
 - **Supports multiple languages:** Analyze algorithms written in various programming languages.
@@ -44,3 +45,6 @@ To run the Tool run the `GUI.py` file.
 - **Missing API Key:** Ensure that your `.env` file is correctly set up with a valid API key.
 - **Dependency Issues:** If packages are missing, try re-running `pip install -r requirements.txt`.
 - **Wrong Python version:** Make sure you are using the right version of python (version 3.12.2 should work fine).
+
+## Testing
+The implemented Test `Test_procedure.py` is there to test the quality of the system prompt and shows how well the LLM can determine space- and time-complexity of certain algorithms.

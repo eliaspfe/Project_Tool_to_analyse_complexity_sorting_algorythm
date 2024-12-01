@@ -1,0 +1,28 @@
+
+Solution Insertion Sort:
+Time:
+Space:
+
++
+
+Solution Merge Sort:
+Time:
+Space:
+
++
+
+Solution Bubble Sort:
+Time:
+Space:
+
++
+
+Solution Quick Sort:
+Time:
+Space:
+
++
+
+Solution Selection Sort:
+Time:
+Space:
