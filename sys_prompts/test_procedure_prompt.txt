@@ -13,5 +13,9 @@ Use the following sequence:
 - Bubble Sort
 - Quick Sort
 - Selection Sort
+- Binary Search
+- Linear Search
+- Summation of GCD of all the pairs up to N
+- Pythagorean Quadruple
 
 Ignore the implemented algorithms from the system prompt.

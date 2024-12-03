@@ -1,28 +1,52 @@
 
 Solution Insertion Sort:
-Time:
-Space:
+Time: Best Case O(N), Average Case O(N^2), Worst Case O(N^2)
+Space: O(1)
 
 +
 
 Solution Merge Sort:
-Time:
-Space:
+Time: O(N log N) (Best Case, Worst Case, Average Case)
+Space: O(N)
 
 +
 
 Solution Bubble Sort:
-Time:
-Space:
+Time: O(N^2) (Best Case, Worst Case, Average Case)
+Space: O(1)
 
 +
 
 Solution Quick Sort:
-Time:
-Space:
+Time: Best Case O(N log N), Average Case O(N log N), Worst Case O(N^2)
+Space: O(N)
 
 +
 
 Solution Selection Sort:
-Time:
-Space:
+Time: O(N^2) (Best Case, Worst Case, Average Case)
+Space: O(1)
+
++
+
+Binary Search:
+Time: O(log N)
+Space: O(1)
+
++
+
+Linear Search:
+Time: Best Case O(1), Average Case O(N), Worst Case O(N)
+Space: O(1)
+
++
+
+Summation of GCD of all the pairs up to N:
+Time: O(MAX*log(log MAX))
+Space: O(MAX)
+
++
+
+Pythagorean Quadruple:
+Time: O(1) (Best Case, Worst Case, Average Case)
+Space: O(1)

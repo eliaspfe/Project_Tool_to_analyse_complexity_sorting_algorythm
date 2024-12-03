@@ -17,7 +17,7 @@ TEST_PROMPT_PATH = "sys_prompts/test_procedure_prompt.txt"
 
 
 #Array of Algorithm Paths
-ALGORITHM_PATHS = {"example_algorithms/bubble_sort.txt", "example_algorithms/insertion_sort.txt", "example_algorithms/quick_sort.txt", "example_algorithms/merge_sort.txt", "example_algorithms/selection_sort.txt"}
+ALGORITHM_PATHS = {"example_algorithms/bubble_sort.txt", "example_algorithms/insertion_sort.txt", "example_algorithms/quick_sort.txt", "example_algorithms/merge_sort.txt", "example_algorithms/selection_sort.txt", "example_algorithms/binary_search.txt", "example_algorithms/linear_search.txt", "example_algorithms/GCD.txt", "example_algorithms/pythagorean_quadruples.txt"}
 algorithms = []
 summarized_responses = []
 
@@ -106,7 +106,7 @@ summarized_responses = response.content.split("+++")
 solution = read_file("solutions_for_testing.txt")
 solution_splitted = solution.split("+")
 
-for i in range(len(algorithms)):
+for i in range(len(summarized_responses)):
     print(summarized_responses[i])
     print(solution_splitted[i])
     print("-----------------")
