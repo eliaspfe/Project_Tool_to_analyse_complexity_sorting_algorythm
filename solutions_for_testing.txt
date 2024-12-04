@@ -29,24 +29,24 @@ Space: O(1)
 
 +
 
-Binary Search:
+Solution Binary Search:
 Time: O(log N)
 Space: O(1)
 
 +
 
-Linear Search:
+Solution Linear Search:
 Time: Best Case O(1), Average Case O(N), Worst Case O(N)
 Space: O(1)
 
 +
 
-Summation of GCD of all the pairs up to N:
+Solution Summation of GCD of all the pairs up to N:
 Time: O(MAX*log(log MAX))
 Space: O(MAX)
 
 +
 
-Pythagorean Quadruple:
+Solution Pythagorean Quadruple:
 Time: O(1) (Best Case, Worst Case, Average Case)
 Space: O(1)

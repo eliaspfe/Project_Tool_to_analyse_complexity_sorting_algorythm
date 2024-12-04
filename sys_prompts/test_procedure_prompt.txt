@@ -1,9 +1,12 @@
 Based on your Last Outputs, summarize the complexity of the analyzed algorithms in the following scheme:
+Do not add any etxra Text, just the scheme as output:
+Always add the Name of the given Algorithm!
+Always add the "+++" from the scheme!
 
 
 Name of Algorithm:
-Time complexities: [Time complexities for worst-, best-, average-case]
-Space complexities: [Time complexities for worst-, best-, average-case]
+Time complexities: [Time complexities for best-, average-, worst-case] (Best-Case, Average-Case, Worst-Case)
+Space complexities: [Space complexities for best-, average-, worst-case] (Best-Case, Average-Case, Worst-Case)
 +++
 
 
