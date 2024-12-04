@@ -85,20 +85,24 @@ counter = 1
 for algorithm in algorithms:
     
     print("Current Algorithm: ", counter)
-    llm_with_history.invoke(
-        algorithm,
-        config=session,
-        )
+    with get_openai_callback() as cb:
+        llm_with_history.invoke(
+            algorithm,
+            config=session,
+            )
+        print(cb)
     print("-----------------")
     counter = counter + 1
 
 
 #! Step2: Invoke LLM to summarize the complexity of the algorithm
 input_text = read_file(TEST_PROMPT_PATH)
-response = llm_with_history.invoke(
-    input_text,
-    config=session,
-    )
+with get_openai_callback() as cb:
+    response = llm_with_history.invoke(
+        input_text,
+        config=session,
+        )
+    print(cb)
 summarized_responses = response.content.split("+++")
 
 
