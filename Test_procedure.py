@@ -109,7 +109,7 @@ summarized_responses = response.content.split("+++")
 #! Step3: Solutions for the algorithms
 solution = read_file("solutions_for_testing.txt")
 solution_splitted = solution.split("+")
-
+print("\n \n-----------------\n Solutions: ")
 for i in range(len(summarized_responses) -1):
     print(summarized_responses[i])
     print(solution_splitted[i])
