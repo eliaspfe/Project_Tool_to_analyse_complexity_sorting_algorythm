@@ -30,7 +30,7 @@ Space: O(1)
 +
 
 Solution Binary Search:
-Time: O(log N)
+Time: Best Case O(1), Average Case O(log N), Worst Case O(log N)
 Space: O(1)
 
 +
